@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="app1">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	
+<title>
+Sample Page for Mike
+</title>
+
+
+
+
+</head>
+
+<body>
+		<div class="container" ng-controller="AppCtrl">
+		<h1>Contact List</h1>
+		<input ng-model="test">
+		<table class="table">
+		<thead>
+			<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Numbers</th>
+			<th>Action</th>
+			<th>&nbsp;</th>
+		</thead>
+		
+		<tbody>  
+		<tr>
+		<td><input class="form-control" ng-model="contact.name"></td>
+		<td>	<input class="form-control" ng-model="contact.email"></td>
+		<td>	<input class="form-control" ng-model="contact.number"></td>
+			<td> <button class="btn btn-primary" ng-click="addContact()"> Add Contact</button></td>
+			<td> <button class="btn btn-info" ng-click="update()"> Update </button> </td>
+		
+			
+			
+		</tr>	
+			
+			<tr	ng-repeat="contact in contactList">	
+				<td>{{contact.name}}</td>
+				<td>{{contact.email}}</td>
+				<td>{{contact.number}}</td>
+				<td><button class ="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
+				<td><button class ="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>
+				
+			</tr>
+		</tbody>
+		</table>
+
+		
+		
+	
+		{{ footer }}
+		</div>
+
+	
+
+	<!-- controller  - this is a view and everything inside of it - will use scope to provide this section with data -->
+
+			<!--
+			<h3 ng-controller="ctrlIndex"> Your first value is {{ bad }}</h3>
+	<h3> Your second value is {{ good }}</h3>
+	
+	-->
+
+
+<!-- allows angular js to be imported -->
+	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	
+	<script src= "js/controller.js"></script>
+	
+</body>
+</html>

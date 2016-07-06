@@ -1,0 +1,6 @@
+Tutorials Point is giving self learning content
+to teach the world in simple and easy way!!!!!
+
+[{"name":"Mike","email":"mikiej@hotmail.com","number":"123456"},
+[{"name":"John","email":"John@hotmail.com","number":"654321"},
+{"name":"Paul","email":"Paul@hotmail.com","number":"9999999"}]
