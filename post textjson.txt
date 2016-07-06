@@ -1,3 +1,11 @@
 -X POST --header "Content-Type: application/json" --data "{\"Filename\" : \"20160513_060500_MCOL_Jan_Server_stats.txt\",\"Generated\" : \"ISODate('2016-05-13T09:47:33.000Z')\",\"Created\" : \"ISODate('2016-05-13T06:00:05.000Z')\",\"AppName\" : \"MCOL\",\"DataType\" : \"MCOLMonthlyServerStats\",\"ServerName\" : \"server2\", \"mstats\" : {\"month\" : \"Jan\", \"claims\" : \"18392\", \"judgments\" : \"12095\", \"warrants\" : \"3426\", \"pa\" : \"485\", \"dac\" : \"2625\", \"sa\" : \"42\", \"aos\" : \"2192\"}}" -H "Content-Type: application/json" http://localhost:3000/api/routing/post
 
 -X POST --header "Content-Type: application/json" --data "{\"Filename\" : \"20160513_060500_MCOL_Jan_Server_stats.txt\"}" -H "Content-Type: application/json" http://localhost:3000/api/routing/post
+
+curl -X POST --header "Content-Type: application/json" --data "{\"Person\" : {\"name\": \"Jemma\", \"email\": \"Jemma@hotmail.com\", \"number\": \"999123456\"}}" -H "Content-Type: application/json" http://localhost:3000/api/routing/post
+
+
+\"mstats\" : {\"month\" : \"Jan\"
+
+
+[{"name":"Mike","email":"mikiej@hotmail.com","number":"123456"},{"_id":"577b7a5c25dc22a951fd2cf3","name":"John","email":"John@hotmail.com","number":"999999"},{"_id":"577b7a5c25dc22a951fd2cf4","name":"Paul","email":"Paul@hotmail.com","number":"101010"}]

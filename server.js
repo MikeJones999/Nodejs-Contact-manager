@@ -105,15 +105,23 @@ app.put('/contactlist/:id', function (req, res)
 
 
 
+//need to route the post to a js file to decide what the request will do
+	
+	//use  to post .....
+	//curl -X POST --header "Content-Type: application/json" --data "{\"Person\" : {\"name\": \"Jemma\", \"email\": \"Jemma@hotmail.com\", \"number\": \"999123456\"}}" -H "Content-Type: application/json" http://localhost:3000/api/routing/post
 
-	//handle posts from AM Dash middleware routing
+	//handle posts from middleware
 	app.post('/api/routing/post', function (req, res) 
 	{
+		
+		console.log("***DEBUG*** POST REQUEST STARTED  ********");
 		var jsonIn = req.body;
 		//print to server console
-		console.log("/api/routing/post - Post . Found file(%s)", jsonIn.Filename);
+		console.log("/api/routing/post - Post. Person found(%s)", jsonIn.Person.name);
+		
+		db.contactlist.insert({name: jsonIn.Person.name, email : jsonIn.Person.email, number : jsonIn.Person.number});
 		
 		//send response
-		res.send('connected');
+		res.send('***DEBUG*** post received');
 	
 	});

@@ -18,7 +18,6 @@ myApp.controller('AppCtrl', function($scope, $http)
 	
 	refresh();
 	
-
 	
 	//adding a contact after button clicked in index.html
 	$scope.addContact = function()
