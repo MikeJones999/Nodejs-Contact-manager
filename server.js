@@ -6,6 +6,7 @@ var app = express();
 // var mongo = require('mongodb');
 var mongojs = require('mongojs');
 var db = mongojs('contactlist', ['contactlist']);
+var path = require('path');
 
 //need this to parse json
 var bodyParser = require('body-parser');
@@ -57,6 +58,27 @@ app.listen(3000, function ()
 	});
 	
 	
+	
+	
+	app.get('/contactList/getContact/:name', function(req,res)
+	{
+		var contactName = req.params.name;
+		console.log("***DEBG*** Name to retreive " + contactName);
+		
+		//res.sendFile(__dirname, '../public/' + 'foundContacts.html');
+		
+		
+			db.contactlist.findOne({name : contactName}, function (err, docs)
+			{
+				//send back object as json
+				//res.send('/public/foundContacts.html');
+				 //res.sendFile(__dirname + '/public/' + 'foundContacts.html');
+					res.json(docs);
+			});
+			
+		res.sendFile('foundContacts.html', { root: path.join(__dirname, '/public') });
+	});
+	
 //------------Delete requests----------------------
 
 //delete request of contact via the id
@@ -107,7 +129,7 @@ app.put('/contactlist/:id', function (req, res)
 
 //need to route the post to a js file to decide what the request will do
 	
-	//use  to post .....
+	//use  to post new contact.....
 	//curl -X POST --header "Content-Type: application/json" --data "{\"Person\" : {\"name\": \"Jemma\", \"email\": \"Jemma@hotmail.com\", \"number\": \"999123456\"}}" -H "Content-Type: application/json" http://localhost:3000/api/routing/post
 
 	//handle posts from middleware

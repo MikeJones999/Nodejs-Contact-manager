@@ -19,7 +19,22 @@ Sample Page for Mike
 <body>
 		<div class="container" ng-controller="AppCtrl">
 		<h1>Contact List</h1>
-		<input ng-model="test">
+		
+		<table class="table">
+		<thead>
+		<tr>
+		<th>Search For Contact</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+		<td><input class="form-control" ng-model="search.name"></td>
+		<td><button class="btn btn-primary" ng-click="searchForContact()"> Search</button></td>
+		</tr>
+		</tbody>
+		
+		
+		
 		<table class="table">
 		<thead>
 			<tr>
@@ -28,6 +43,7 @@ Sample Page for Mike
 			<th>Numbers</th>
 			<th>Action</th>
 			<th>&nbsp;</th>
+			</tr>
 		</thead>
 		
 		<tbody>  

@@ -19,6 +19,31 @@ myApp.controller('AppCtrl', function($scope, $http)
 	refresh();
 	
 	
+	
+	$scope.searchForContact = function()
+	{
+		
+			console.log("***DEBUG*** received " + $scope.search.name);
+			//this is a request for the /contactList
+			var name = $scope.search.name;
+			$http.get('/contactList/getContact/' + name)
+			
+			/*.success(function(response)
+			{
+				console.log("Contact received back from get request: " + response.name);
+				////clear the contact boxes
+				$scope.search = "";			
+				$scope.contact = response;
+				//$scope.singleContact = response;			
+			});
+			
+			*/
+		
+	}
+	
+	
+	
+	
 	//adding a contact after button clicked in index.html
 	$scope.addContact = function()
 	{
