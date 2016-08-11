@@ -49,13 +49,16 @@ myApp.controller('AppCtrl', function($scope, $http)
 	{
 		console.log("***DEBUG*** received " + $scope.contact.name);
 		
-		//send input of new contact data to server
-		$http.post('/contactList', $scope.contact).success(function (response)
+		if($scope.contact.name === "")
 		{
-			console.log(response);
-		})
-		
-		refresh();
+			//send input of new contact data to server
+			$http.post('/contactList', $scope.contact).success(function (response)
+			{
+				console.log(response);
+			})
+			
+			refresh();
+		}
 	}
 	
 	//delete contact - response to button click

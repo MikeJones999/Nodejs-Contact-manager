@@ -89,8 +89,7 @@ app.delete('/contactList/:id', function (req, res)
 	db.contactlist.remove({_id: mongojs.ObjectId(id)}, function (err, docs)
 		{
 			res.json(docs);
-		})
-	
+		})	
 });
 	
 
@@ -100,7 +99,7 @@ app.delete('/contactList/:id', function (req, res)
 app.post('/contactList', function(req, res)
 {
 	var jsonIn = req.body;
-	console.log("***DEBUG*** Post request " + jsonIn);
+	console.log("***DEBUG*** Post request " + jsonIn.name);
 	
 	db.contactlist.insert(jsonIn, function(err, docs)
 	{
